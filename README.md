@@ -1,12 +1,14 @@
 # QA Portfolio
 
+[![E2E · Playwright](https://github.com/odemaria/qa-portfolio/actions/workflows/e2e-playwright.yml/badge.svg)](https://github.com/odemaria/qa-portfolio/actions/workflows/e2e-playwright.yml)
+
 Portafolio de automatización de pruebas de **Omar Demaría**, QA Lead y QA Automation Engineer.
 
 Cada módulo es un proyecto independiente que corre contra una aplicación pública pensada para practicar testing. Todos corren en CI con GitHub Actions y publican su reporte como artefacto.
 
-| Módulo | Qué prueba | Stack | Objetivo |
+| Módulo | Qué prueba | Stack | Alcance |
 |--------|------------|-------|----------|
-| _en construcción_ | | | |
+| [`e2e-playwright`](e2e-playwright) | Login, catálogo, carrito y checkout de SauceDemo | Playwright · TypeScript · Page Object Model | Chromium, Firefox y móvil |
 
 ## Principios
 

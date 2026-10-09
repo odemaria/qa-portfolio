@@ -1,0 +1,21 @@
+{
+  "name": "e2e-playwright",
+  "version": "1.0.0",
+  "description": "Pruebas E2E de SauceDemo con Playwright y Page Object Model",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:chromium": "playwright test --project=chromium",
+    "report": "playwright show-report"
+  },
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^26.6.5"
+  },
+  "private": true
+}
