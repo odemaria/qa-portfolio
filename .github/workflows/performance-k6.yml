@@ -1,0 +1,48 @@
+name: Performance · k6
+
+on:
+  push:
+    branches: [main]
+    paths: ["performance-k6/**", ".github/workflows/performance-k6.yml"]
+  pull_request:
+    paths: ["performance-k6/**", ".github/workflows/performance-k6.yml"]
+  schedule:
+    - cron: "0 11 * * 1"
+  workflow_dispatch:
+    inputs:
+      test:
+        description: Prueba a ejecutar
+        type: choice
+        options: [smoke, load]
+        default: smoke
+
+defaults:
+  run:
+    working-directory: performance-k6
+
+jobs:
+  k6:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      # solo la corrida manual puede lanzar la prueba de carga; el resto corre humo
+      TEST: ${{ inputs.test || 'smoke' }}
+      K6_WEB_DASHBOARD: "true"
+      K6_WEB_DASHBOARD_EXPORT: report.html
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: grafana/setup-k6-action@v1
+
+      - name: Correr prueba
+        run: k6 run --summary-export summary.json "$TEST.js"
+
+      - name: Publicar reporte
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: k6-${{ env.TEST }}-report
+          path: |
+            performance-k6/report.html
+            performance-k6/summary.json
+          retention-days: 14
