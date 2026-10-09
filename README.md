@@ -1,6 +1,7 @@
 # QA Portfolio
 
 [![E2E · Playwright](https://github.com/odemaria/qa-portfolio/actions/workflows/e2e-playwright.yml/badge.svg)](https://github.com/odemaria/qa-portfolio/actions/workflows/e2e-playwright.yml)
+[![API · Karate](https://github.com/odemaria/qa-portfolio/actions/workflows/api-karate.yml/badge.svg)](https://github.com/odemaria/qa-portfolio/actions/workflows/api-karate.yml)
 
 Portafolio de automatización de pruebas de **Omar Demaría**, QA Lead y QA Automation Engineer.
 
@@ -9,6 +10,7 @@ Cada módulo es un proyecto independiente que corre contra una aplicación públ
 | Módulo | Qué prueba | Stack | Alcance |
 |--------|------------|-------|----------|
 | [`e2e-playwright`](e2e-playwright) | Login, catálogo, carrito y checkout de SauceDemo | Playwright · TypeScript · Page Object Model | Chromium, Firefox y móvil |
+| [`api-karate`](api-karate) | Autenticación, CRUD, búsqueda y seguridad de la API de Restful-Booker | Karate · Java 17 · JUnit 5 | Esquemas, casos negativos y hallazgos documentados |
 
 ## Principios
 
