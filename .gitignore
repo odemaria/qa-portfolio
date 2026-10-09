@@ -10,7 +10,7 @@ target/
 *.class
 
 # k6
-*.html.report
+performance-k6/report.html
 summary.json
 
 # Editores y SO

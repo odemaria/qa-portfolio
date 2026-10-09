@@ -1,12 +1,14 @@
 # QA Portfolio
 
+[![Performance · k6](https://github.com/odemaria/qa-portfolio/actions/workflows/performance-k6.yml/badge.svg)](https://github.com/odemaria/qa-portfolio/actions/workflows/performance-k6.yml)
+
 Portafolio de automatización de pruebas de **Omar Demaría**, QA Lead y QA Automation Engineer.
 
 Cada módulo es un proyecto independiente que corre contra una aplicación pública pensada para practicar testing. Todos corren en CI con GitHub Actions y publican su reporte como artefacto.
 
 | Módulo | Qué prueba | Stack | Objetivo |
 |--------|------------|-------|----------|
-| _en construcción_ | | | |
+| [`performance-k6`](performance-k6) | Recorrido de usuario y API de recomendaciones de QuickPizza | k6 · JavaScript | Umbrales por endpoint y validación funcional bajo carga |
 
 ## Principios
 
