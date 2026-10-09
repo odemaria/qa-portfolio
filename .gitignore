@@ -1,0 +1,20 @@
+# Node / Playwright
+node_modules/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# Java / Maven / Karate
+target/
+*.class
+
+# k6
+*.html.report
+summary.json
+
+# Editores y SO
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
