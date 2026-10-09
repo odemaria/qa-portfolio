@@ -1,0 +1,39 @@
+name: API · Karate
+
+on:
+  push:
+    branches: [main]
+    paths: ["api-karate/**", ".github/workflows/api-karate.yml"]
+  pull_request:
+    paths: ["api-karate/**", ".github/workflows/api-karate.yml"]
+  schedule:
+    - cron: "0 11 * * 1"
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: api-karate
+
+jobs:
+  api:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: maven
+
+      - name: Correr pruebas
+        run: mvn -B -ntp test
+
+      - name: Publicar reporte
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: karate-report
+          path: api-karate/target/karate-reports/
+          retention-days: 14
