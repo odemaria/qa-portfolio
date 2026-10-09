@@ -1,12 +1,14 @@
 # QA Portfolio
 
+[![API · Karate](https://github.com/odemaria/qa-portfolio/actions/workflows/api-karate.yml/badge.svg)](https://github.com/odemaria/qa-portfolio/actions/workflows/api-karate.yml)
+
 Portafolio de automatización de pruebas de **Omar Demaría**, QA Lead y QA Automation Engineer.
 
 Cada módulo es un proyecto independiente que corre contra una aplicación pública pensada para practicar testing. Todos corren en CI con GitHub Actions y publican su reporte como artefacto.
 
 | Módulo | Qué prueba | Stack | Objetivo |
 |--------|------------|-------|----------|
-| _en construcción_ | | | |
+| [`api-karate`](api-karate) | Autenticación, CRUD, búsqueda y seguridad de la API de Restful-Booker | Karate · Java 17 · JUnit 5 | Esquemas, casos negativos y hallazgos documentados |
 
 ## Principios
 
